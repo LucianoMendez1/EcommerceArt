@@ -1,0 +1,122 @@
+body {
+  font-family: "Readex Pro", sans-serif;
+  margin: 0;
+  padding: 0;
+  
+  
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.4rem;
+  background-color: #fefeea ;
+  
+}
+
+.logo {
+  display: flex;
+  color: #ff7987;
+  font-size: 40px;
+  
+}
+
+
+
+
+.productos-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  
+}
+
+.icon {
+  margin-right: 10px;
+  
+}
+
+.total {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+.vaciar-btn {
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.app-container {
+  
+  min-height: 100vh;
+  
+}
+
+h1 {
+  color: #333;
+  
+}
+
+.producto {
+  background-color: #fffcfc;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow:  16px 14px 20px #a7a7a78c;
+  border: 1px solid rgb(231, 231, 231);
+  position: relative;
+}
+
+.producto h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.producto p {
+  margin: 0;
+  color: #1ab901;
+}
+
+.button-producto {
+  background-color:#ff7987 ;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 10px;
+
+}
+
+.button-producto:hover {
+  background-color: #28ba7f;
+  transform: scale(1.01);
+}
+
+
+
+
+.producto-descripcion {
+  display: flex;
+  align-items: flex-start;
+  font-size: medium;
+  color: #1a1414;
+}
+
+.producto-imagen {
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
