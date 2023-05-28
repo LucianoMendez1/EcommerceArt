@@ -1,12 +1,14 @@
 .carrito {
   position: fixed;
-  top: 20px;
-  right: 100px;
-  width: 350px;
-  background-color: #fbfaf4;
+  display: flex;
+  align-items: center;
+  top: 1px;
+  right: 00px;
+  width: 20%;
+  background-color: #f9c1bb;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+  padding: 16px;
 }
 
 .carrito h2 {
@@ -142,8 +144,9 @@
 }
 
 .carrito button {
-  background-color: #ff7987;
-  color: #fff;
+  background-color: #fcfcfc;
+  color: #cca9dd;
+  font-size: 13px;
   border: none;
   border-radius: 4px;
   padding: 8px 12px;
