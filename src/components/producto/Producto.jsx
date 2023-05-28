@@ -1,30 +1,22 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../carrito/CartContext';
+import React, { useState } from 'react';
+import { stockProductos } from './stockProductos';
+import Carrito from '../carrito/Carrito';
+import Card from './Card';
 
-const Producto = ({ producto }) => {
-  const { agregarAlCarrito } = useContext(CartContext);
-  const { id, nombre, precio, stock } = producto;
-
-  const handleClick = () => {
-    if (stock > 0) {
-      agregarAlCarrito(producto);
-    }
-  };
+const Producto = () => {
+  const [mostrarCarrito, setMostrarCarrito] = useState(true);
 
   return (
-    <div className="producto">
-      <img className="producto-imagen" src={producto.imagen} alt={producto.nombre} />
-      <h3>{nombre}</h3>
-      <div className="producto-descripcion">{producto.descripcion} </div>
-      <p>${precio}</p>
-
-      
-      {stock > 0 ? (
-        <button className="button-producto"onClick={handleClick}>Agregar al Carrito</button>
-      ) : (
-        <p>No hay stock disponible</p>
-      )}
-    </div>
+      <div className="app-container">
+        <div className="logo">𝓟𝓪𝓵𝓶𝓪𝓐𝓻𝓽</div>
+        <div className="productos-container">
+          {stockProductos.map((producto) => (
+            <Card key={producto.id} producto={producto} />
+          ))}
+        </div>
+        
+        {mostrarCarrito && <Carrito />}
+      </div> 
   );
 };
 

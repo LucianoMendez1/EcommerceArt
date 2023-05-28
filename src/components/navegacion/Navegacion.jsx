@@ -98,7 +98,7 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            PalmaArt
+            𝓟𝓪𝓵𝓶𝓪𝓐𝓻𝓽
           </Typography>
         </Toolbar>
       </AppBar>
@@ -123,7 +123,7 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          {['Inicio', 'Cuenta', 'Contacto'].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
