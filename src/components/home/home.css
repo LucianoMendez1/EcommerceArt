@@ -1,23 +1,24 @@
-.container {
+.home-container {
+    background-color: #f9f4ea;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f8f5ee;
+    
+  }
+  
+  .presentation {
+    text-align: center;
   }
   
   .title {
-    font-size: 4rem;
+    font-size: 48px;
     font-weight: bold;
-    margin: 0;
     color: #000000;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
   }
   
-  .subtitle {
-    font-size: 1.5rem;
-    margin: 20px 0;
-    color: #000000;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  .description {
+    font-size: 24px;
+    color: #100e0d;
   }
   

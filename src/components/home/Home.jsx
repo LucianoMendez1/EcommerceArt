@@ -1,11 +1,13 @@
 import React from 'react';
-import './home.css';
+import './Home.css';
 
 const Home = () => {
   return (
-    <div className="container">
-      <h1 className="title">Palma Art</h1>
-      <p className="subtitle">Explora el arte en todas sus formas</p>
+    <div className="home-container">
+      <div className="presentation">
+        <h1 className="title">Palma Art</h1>
+        <p className="description">¡Descubre el arte en cada creación!</p>
+      </div>
     </div>
   );
 };
