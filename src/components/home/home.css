@@ -1,3 +1,71 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 50px;
+}
+
+.description {
+  font-size: 30px;
+}
+
+.presentation {
+  text-align: center;
+}
+
+.title {
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #100e0d;
+}
+
+.btn-productos {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 30px;
+  text-decoration: none;
+  color: #fcfcfc;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: rgba(255, 37, 157, 0.09);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation-name: typeEffect;
+  animation-duration: 2s;
+  animation-timing-function: steps(20);
+  animation-fill-mode: forwards;
+}
+
+@keyframes typeEffect {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.btn-productos:hover {
+  background-color: #4d1bee51;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transform: translateZ(4px);
+}
+
+
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 @media (max-width: 768px) {
   .home-container {
     display: flex;
@@ -40,33 +108,4 @@
     align-items: center;
     justify-content: center;
   }
-
-  .title {
-    font-size: 50px;
-  }
-
-  .description {
-    font-size: 30px;
-  }
-}
-
-.presentation {
-  text-align: center;
-}
-
-.title {
-  font-weight: bold;
-  color: #000000;
-  margin-bottom: 20px;
-}
-
-.description {
-  color: #100e0d;
-}
-
-.webgl {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
 }

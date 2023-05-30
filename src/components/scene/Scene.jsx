@@ -61,7 +61,7 @@ const Scene = () => {
     controls.enableZoom = true;
     controls.enablePan = true;
     controls.minDistance = 10;
-    controls.maxDistance = 100;
+    controls.maxDistance = 50;
     controls.update();
 
     // Lights

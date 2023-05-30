@@ -18,7 +18,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import Carrito from '../carrito/Carrito'
+import Carrito from '../carrito/Carrito';
 
 const drawerWidth = 240;
 
@@ -58,8 +58,10 @@ const AppBar = styled(MuiAppBar, {
   }),
   width: '80%',
   left: 0,
-  background: '#f9c1bb',
-  color: '#fff',
+  background: 'rgba(249, 193, 187, 0.8)', // Ajusta el color de fondo con transparencia
+  color: '#ffffff',
+  backdropFilter: 'blur(20px)', // Ajusta el valor de difuminado
+  boxShadow: '0px 8px 10px rgba(0, 0, 0, 0.1)', // Añade una sombra sutil
 }));
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -69,6 +71,16 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
+}));
+
+const CustomDrawer = styled(Drawer)(({ theme }) => ({
+  '& .MuiDrawer-paper': {
+    width: drawerWidth,
+    boxSizing: 'border-box',
+    backdropFilter: 'blur(10px)', // Aplica el efecto de difuminado
+    background: 'rgba(255, 215, 211, 0.5)', // Ajusta el color de fondo con transparencia
+    borderRight: 'none', // Elimina el borde derecho
+  },
 }));
 
 export default function PersistentDrawerLeft() {
@@ -102,19 +114,11 @@ export default function PersistentDrawerLeft() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-            background: '#ffd7d3',
-          },
-        }}
+      <CustomDrawer
         variant="persistent"
         anchor="left"
         open={open}
+        onClose={handleDrawerClose}
       >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
@@ -123,7 +127,7 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inicio', 'Cuenta', 'Contacto'].map((text, index) => (
+          {['Inicio', 'Productos', 'Contacto'].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -136,7 +140,7 @@ export default function PersistentDrawerLeft() {
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          {['Opción 1', 'Opción 2', 'Opción 3'].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -147,7 +151,7 @@ export default function PersistentDrawerLeft() {
             </ListItem>
           ))}
         </List>
-      </Drawer>
+      </CustomDrawer>
       <Main open={open}>
         <DrawerHeader />
         <Carrito />
