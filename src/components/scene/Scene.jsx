@@ -62,7 +62,6 @@ const Scene = () => {
     controls.enablePan = true;
     controls.minDistance = 10;
     controls.maxDistance = 50;
-    controls.update();
 
     // Lights
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -73,6 +72,7 @@ const Scene = () => {
       mesh.rotation.y += 0.0002;
 
       // Render
+      controls.update()
       renderer.render(scene, camera);
 
       // Call animate again on the next frame
