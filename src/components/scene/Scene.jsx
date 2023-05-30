@@ -47,7 +47,7 @@ const Scene = () => {
     // Object
     const textureLoader = new THREE.TextureLoader();
     const planetTexture = textureLoader.load(textureImg);
-    const geometry = new THREE.SphereGeometry(16, 64, 64);
+    const geometry = new THREE.SphereGeometry(16, 32, 16);
     const material = new THREE.MeshStandardMaterial({
       map: planetTexture,
       side: THREE.BackSide,
