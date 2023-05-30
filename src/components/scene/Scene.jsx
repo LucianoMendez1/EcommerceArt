@@ -79,7 +79,7 @@ const Scene = () => {
       requestAnimationFrame(animate);
     };
 
-    animate(2);
+    animate();
   }, []);
 
   return <canvas className="webgl" ref={canvasRef}></canvas>;
