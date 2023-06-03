@@ -48,7 +48,7 @@ const Scene = () => {
     // Object
     const textureLoader = new THREE.TextureLoader();
     const planetTexture = textureLoader.load(textureImg);
-    const geometry = new THREE.SphereGeometry(32, 128, 64);
+    const geometry = new THREE.SphereGeometry(32, 128, 32);
     const material = new THREE.MeshStandardMaterial({
       map: planetTexture,
       side: THREE.BackSide,
@@ -60,7 +60,7 @@ const Scene = () => {
     // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.enableZoom = true;
+    controls.enableZoom = false;
     controls.enablePan = true;
     controls.minDistance = 50;
     controls.maxDistance = 62;
