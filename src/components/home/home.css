@@ -2,26 +2,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  font-size: 50px;
-}
-
-.description {
-  font-size: 30px;
-}
-
-.presentation {
-  text-align: center;
-}
-
-.title {
+  color: #fcfcfc;
+  font-size: 55px;
   font-weight: bold;
-  color: #121212;
   margin-bottom: 20px;
 }
 
+
+.presentation {
+  text-align: center;
+  font-size: 30px;
+}
+
+
+
 .description {
-  color: #100e0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fcfcfc;   
 }
 
 .btn-productos {
@@ -109,3 +108,5 @@
     justify-content: center;
   }
 }
+
+
