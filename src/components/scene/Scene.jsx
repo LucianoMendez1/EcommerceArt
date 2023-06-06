@@ -34,7 +34,7 @@ const Scene = () => {
     const scene = new THREE.Scene();
 
     // Camera
-    const camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 0.1, 9000);
+    const camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 0.1, 1000);
     camera.position.z = 100;
     scene.add(camera);
 
@@ -58,7 +58,7 @@ const Scene = () => {
     scene.add(mesh);
 
     // Controls
-    const controls = new OrbitControls(camera, renderer.domElement);
+    const controls = new OrbitControls(camera, canvas);
     controls.enableDamping = true;
     controls.enableZoom = false;
     controls.enablePan = true;
@@ -73,10 +73,6 @@ const Scene = () => {
     // Animation
     const animate = () => {
       mesh.rotation.y += 0.001;
-
-      // Update material texture
-      materialRef.current.map = planetTexture;
-      materialRef.current.needsUpdate = true;
 
       // Render
       renderer.render(scene, camera);

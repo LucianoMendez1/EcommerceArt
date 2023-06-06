@@ -24,6 +24,8 @@
   color: #fcfcfc;   
 }
 
+
+
 .btn-productos {
   display: inline-block;
   overflow: hidden;
@@ -58,7 +60,22 @@
   transform: translateZ(4px);
 }
 
-
+.mi{
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 30px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 4px;
+  background-color: rgba(7, 6, 7, 0.09);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation-name: typeEffect;
+  animation-duration: 2s;
+  animation-timing-function: steps(20);
+  animation-fill-mode: forwards;
+}
 
 .webgl {
   position: fixed;

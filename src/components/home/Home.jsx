@@ -10,6 +10,7 @@ const Home = () => {
       <div className="presentation">
         <h1 className="title">Palma Art</h1>
         <p className="description">¡Descubre el arte en cada creacion!</p>
+        <button className="mi">Conoce Mas Sobre Mi</button>
         <Link to="/productos" className="btn-productos">Tienda</Link>
       </div>
     </div>
