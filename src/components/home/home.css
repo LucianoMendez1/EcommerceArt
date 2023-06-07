@@ -122,6 +122,10 @@
     font-size: 18px;
   }
 
+  .mi{
+    font-size: 14px;
+  }
+
   .cerrar-button {
     font-size: 14px;
   }
@@ -134,6 +138,10 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .title {
     font-size: 48px;
+  }
+
+  .mi{
+    font-size: 18px;
   }
 
   .artist-description {
