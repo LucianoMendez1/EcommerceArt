@@ -70,7 +70,7 @@ const Home = () => {
         {showDescription && (
           <div className="description-container show" ref={descriptionRef}>
             <span className="artist-description">
-              Valentina, artista de 21 años con un emprendimiento de venta.
+              Valentina Palma artista de 21 años con un emprendimiento de venta.
             </span>
             <div className="description-buttons">
               <a href="/productos" className="btn-productos" ref={btnProductosRef}>

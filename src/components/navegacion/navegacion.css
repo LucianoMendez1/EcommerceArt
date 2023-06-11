@@ -1,45 +1,44 @@
-/* Estilos para la barra de navegación */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    padding: 10px 20px;
-  }
-  
-  .navbar-items {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar-item {
-    margin: 0;
-  }
-  
-  .navbar-link {
-    text-decoration: none;
-    color: #000000;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .navbar-link:hover {
-    color: #666;
-  }
-  
-  /* Estilos para el carrito */
-  .carrito {
-    display: flex;
-    align-items: center;
-  }
-  
-  .carrito-icon {
-    margin-right: 5px;
-  }
-  
-  .carrito-text {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-items {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-item {
+  margin: 0;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbar-link:hover {
+  color: #666666;
+}
+
+/* Estilos para el carrito */
+.carrito {
+  display: flex;
+  align-items: center;
+}
+
+.carrito-icon {
+  margin-right: 5px;
+}
+
+.carrito-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
