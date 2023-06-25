@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './navegacion.css';
 import Carrito from '../carrito/Carrito';
 
 const Navegacion = () => {
+  const [menuActivo, setMenuActivo] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuActivo(!menuActivo);
+  };
+
   return (
     <nav className="navbar">
-      <ul className="navbar-items">
+      <div className={`navbar-toggle ${menuActivo ? 'active' : ''}`} onClick={toggleMenu}>
+        <span className="navbar-toggle-line"></span>
+        <span className="navbar-toggle-line"></span>
+        <span className="navbar-toggle-line"></span>
+      </div>
+      <ul className={`navbar-items ${menuActivo ? 'active' : ''}`}>
         <li className="navbar-item">
           <a href="" className="navbar-link">
             Inicio
@@ -21,8 +32,10 @@ const Navegacion = () => {
             Contacto
           </a>
         </li>
+        <li>
+          <Carrito />
+        </li>
       </ul>
-      <Carrito />
     </nav>
   );
 };

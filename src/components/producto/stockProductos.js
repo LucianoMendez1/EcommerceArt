@@ -10,7 +10,7 @@ export const stockProductos = [
   {
     id: 2,
     nombre: 'Majin Boo',
-    descripcion: 'Descripción del producto 2',
+    descripcion: 'Hecho en fibrofacil, Medida: 30 x 50cm ,Hecho con acrílicos',
     precio: 20,
     stock: 2,
     imagen: 'https://res.cloudinary.com/dvnhn35l4/image/upload/v1685299530/imagenescomercio/buu-dragon-ball-dragon-ball-z_stjtnx.jpg',

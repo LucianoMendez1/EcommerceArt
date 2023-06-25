@@ -1,6 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
+
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
+import { CopyShader } from 'three/examples/jsm/shaders/CopyShader';
+
 import textureImg from './textures/texture1.jpg';
 
 const Scene = () => {
@@ -28,6 +35,9 @@ const Scene = () => {
       // Update renderer
       renderer.setSize(sizes.width, sizes.height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // Update composer
+      composer.setSize(sizes.width, sizes.height);
     });
 
     // Scene
@@ -45,6 +55,23 @@ const Scene = () => {
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(window.devicePixelRatio * 2);
 
+    // Postprocessing
+    const composer = new EffectComposer(renderer);
+    composer.setSize(sizes.width, sizes.height);
+
+    const renderPass = new RenderPass(scene, camera);
+    composer.addPass(renderPass);
+
+    const bloomPass = new UnrealBloomPass(new THREE.Vector2(sizes.width, sizes.height), 1.5, 0.4, 0.85);
+    composer.addPass(bloomPass);
+
+   
+   
+
+    const copyPass = new ShaderPass(CopyShader);
+    copyPass.renderToScreen = true;
+    composer.addPass(copyPass);
+
     // Object
     const textureLoader = new THREE.TextureLoader();
     const planetTexture = textureLoader.load(textureImg);
@@ -53,7 +80,7 @@ const Scene = () => {
       map: planetTexture,
       side: THREE.BackSide,
     });
-    materialRef.current = material; // Store the material reference
+    materialRef.current = material; // Almacenar la referencia al material
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
@@ -67,15 +94,15 @@ const Scene = () => {
     controls.update();
 
     // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
     scene.add(ambientLight);
 
     // Animation
     const animate = () => {
       mesh.rotation.y += 0.001;
 
-      // Render
-      renderer.render(scene, camera);
+      // Render scene with postprocessing
+      composer.render();
 
       // Call animate again on the next frame
       requestAnimationFrame(animate);

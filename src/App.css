@@ -7,9 +7,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-html{
-  font-family:  'Futura', sans-serif;
-}
 
 .app-container {
   display: flex;
@@ -18,14 +15,14 @@ html{
   justify-content: center;
   padding: 20px;
   font-size: 1.4rem;
-  background-color: #fefeea ;
   
 }
 
 .logo {
+  padding: 50px;
   display: flex;
-  color: #ff7987;
-  font-size: 40px;
+  color: #fdfafb;
+  font-size: 5rem;
   
 }
 
@@ -39,7 +36,7 @@ html{
     flex-wrap:wrap;
     width: 100%;
     gap: 2rem;
-  
+    
 }
 
 .icon {
@@ -76,17 +73,18 @@ h1 {
 }
 
 .producto {
-  background-color: #fffcfc;
+  background-color: #fffffffe;
   border-radius: 30px;
   padding: 20px;
-  box-shadow:  16px 14px 20px #a7a7a78c;
-  border: 1px solid rgb(231, 231, 231);
+  text-decoration: none;
   position: relative;
+  
 }
 
 .producto h3 {
   font-size: 16px;
   margin-bottom: 10px;
+  
 }
 
 .producto p {
@@ -127,4 +125,54 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  /* Estilos para pantallas de hasta 768px de ancho */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-toggle-line {
+    height: 2px;
+  }
+
+  .navbar-items {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .navbar-items.active {
+    opacity: 1;
+  }
+
+  .navbar-link {
+    font-size: 1rem;
+  }
+
+  .carrito-text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Estilos para pantallas de hasta 480px de ancho */
+  .navbar-items {
+    gap: 5px;
+  }
+
+  .navbar-link {
+    font-size: 0.8rem;
+  }
+
+  .carrito-text {
+    font-size: 10px;
+  }
 }
