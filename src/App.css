@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 
 .app-container {
   display: flex;
@@ -15,40 +14,32 @@
   justify-content: center;
   padding: 20px;
   font-size: 1.4rem;
-  
 }
 
 .logo {
   padding: 50px;
   display: flex;
-  color: #fdfafb;
-  font-size: 5rem;
-  
+  color: #ffffff;
+  font-size: 6rem;
 }
 
-
-
-
 .productos-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap:wrap;
-    width: 100%;
-    gap: 2rem;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2rem;
 }
 
 .icon {
   margin-right: 10px;
-  
 }
 
 .total {
   margin-top: 10px;
   font-weight: bold;
   font-size: 20px;
-
 }
 
 .vaciar-btn {
@@ -62,45 +53,45 @@
 }
 
 .app-container {
-  
   min-height: 100vh;
-  
 }
 
 h1 {
   color: #333;
-  
 }
 
 .producto {
-  background-color: #fffffffe;
-  border-radius: 30px;
+  background-color: #f2e8e1;
+  border-radius: 20px;
   padding: 20px;
   text-decoration: none;
   position: relative;
-  
+  transition: transform 0.3s ease;
+}
+
+.producto:hover {
+  transform: scale(1.05);
 }
 
 .producto h3 {
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 10px;
-  
 }
 
 .producto p {
   margin: 0;
-  color: #1ab901;
+  font-size: 1.8rem;
+  color: #010101;
 }
 
 .button-producto {
-  background-color:#ff7987 ;
+  background-color: #ff7987;
   color: #fff;
   border: none;
   border-radius: 4px;
   padding: 8px 12px;
   cursor: pointer;
   margin-top: 10px;
-
 }
 
 .button-producto:hover {
@@ -108,27 +99,27 @@ h1 {
   transform: scale(1.01);
 }
 
-
-
-
 .producto-descripcion {
   display: flex;
-  align-items: flex-start;
-  font-size: medium;
+  align-items: center;
+  font-size: 1rem;
   color: #1a1414;
 }
 
 .producto-imagen {
-  width: 400px;
+  width: 500px;
   height: 200px;
   object-fit: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+a {
+  text-decoration: none;
+  color: #000000;
+  padding: 50px;
+}
 @media screen and (max-width: 768px) {
-  /* Estilos para pantallas de hasta 768px de ancho */
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -163,7 +154,6 @@ h1 {
 }
 
 @media screen and (max-width: 480px) {
-  /* Estilos para pantallas de hasta 480px de ancho */
   .navbar-items {
     gap: 5px;
   }
