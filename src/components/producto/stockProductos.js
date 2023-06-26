@@ -29,15 +29,15 @@ export const stockProductos = [
     descripcion: 'Goku Ssj4 hecho con Fibrofacil 30x50cm,Acrilicos',
     precio: 15000,
     stock: 5,
-    imagen: 'https://res.cloudinary.com/dvnhn35l4/image/upload/v1687740034/imagenescomercio/WhatsApp_Image_2023-06-25_at_21.36.48_tpblbj.jpg',
+    imagen: 'https://res.cloudinary.com/dvnhn35l4/image/upload/v1687745553/imagenescomercio/WhatsApp_Image_2023-06-25_at_21.36.48_1_yrbaer.jpg',
   },
   {
     id: 5,
-    nombre: 'Frenchi',
+    nombre: 'Frenchie',
     descripcion: 'Bulldog francés, hecho en cuadro de tela 50x50 con acrílicos ',
     precio: 20000,
     stock: 5,
-    imagen: 'https://res.cloudinary.com/dvnhn35l4/image/upload/v1687740048/imagenescomercio/WhatsApp_Image_2023-06-25_at_20.39.43_vxl39h.jpg',
+    imagen: 'https://res.cloudinary.com/dvnhn35l4/image/upload/v1687745553/imagenescomercio/WhatsApp_Image_2023-06-25_at_20.42.09_jbmbma.jpg',
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ export const stockProductos = [
     descripcion: 'Rana,Hecho en cuadro de tela 50x50 con acrílicos',
     precio: 20000,
     stock: 5,
-    imagen: 'https://res.cloudinary.com/dvnhn35l4/image/upload/v1687737779/imagenescomercio/WhatsApp_Image_2023-06-25_at_21.02.31_nrysbf.jpg',
+    imagen: 'https://res.cloudinary.com/dvnhn35l4/image/upload/v1687745552/imagenescomercio/WhatsApp_Image_2023-06-25_at_21.02.31_1_zsvjwc.jpg',
   },
  /*  {
     id: 7,

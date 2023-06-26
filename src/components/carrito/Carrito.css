@@ -283,7 +283,7 @@
 }
 
 /* Estilos para pantallas más grandes (desktop) */
-@media (max-width: 1360px ) and (m-width: 480px) {
+
   .carrito {
     position: fixed;
     display: flex;
@@ -429,5 +429,3 @@
   }
 
 
-
-}
