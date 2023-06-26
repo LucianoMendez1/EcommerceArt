@@ -283,7 +283,7 @@
 }
 
 /* Estilos para pantallas más grandes (desktop) */
-@media (min-width: 1024px) {
+@media (max-width: 1360px ) and (m-width: 480px) {
   .carrito {
     position: fixed;
     display: flex;
@@ -392,6 +392,12 @@
     transform: scale(1.05);
   }
 
+  
+
+  .finalizar-compra-btn:hover{
+    background-color: #69f300;
+  }
+
   .carrito ul {
     list-style-type: none;
     padding: 0;
@@ -421,4 +427,7 @@
     padding: 8px 12px;
     cursor: pointer;
   }
+
+
+
 }

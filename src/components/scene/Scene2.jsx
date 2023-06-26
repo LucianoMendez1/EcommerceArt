@@ -4,13 +4,14 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
-
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
 import { CopyShader } from 'three/examples/jsm/shaders/CopyShader';
+import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
+import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass';
 
-import textureImg from './textures/texture1.jpg';
+import textureImg from './textures/texture2.jpg';
 
-const Scene = () => {
+const Scene2 = () => {
   const canvasRef = useRef(null);
   const materialRef = useRef(null);
 
@@ -67,6 +68,20 @@ const Scene = () => {
     const bloomPass = new UnrealBloomPass(new THREE.Vector2(sizes.width, sizes.height), 1.5, 0.4, 0.85);
     composer.addPass(bloomPass);
 
+    /* // Film Pass para el efecto de borrosidad (desenfoque)
+    const filmPass = new FilmPass(0.35, 0.025, 648, false);
+    composer.addPass(filmPass); */
+
+    // Bokeh Pass para el efecto de desenfoque gaussiano (más difuminado)
+    const bokehPass = new BokehPass(scene, camera, {
+      focus: 1.0,
+      aperture: 0.025,
+      maxblur: 0.25,
+      width: sizes.width,
+      height: sizes.height,
+    });
+    composer.addPass(bokehPass);
+
     const copyPass = new ShaderPass(CopyShader);
     copyPass.renderToScreen = true;
     composer.addPass(copyPass);
@@ -89,7 +104,7 @@ const Scene = () => {
     controls.enableZoom = false;
     controls.enablePan = true;
     controls.minDistance = 50;
-    controls.maxDistance = 62;
+    controls.maxDistance = 60;
     controls.update();
 
     // Lights
@@ -113,4 +128,4 @@ const Scene = () => {
   return <canvas className="webgl" ref={canvasRef}></canvas>;
 };
 
-export default Scene;
+export default Scene2;

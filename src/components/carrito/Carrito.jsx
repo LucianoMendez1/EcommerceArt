@@ -3,10 +3,12 @@ import { CartContext } from './CartContext';
 import './Carrito.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+
 const Carrito = () => {
   const { carrito, eliminarDelCarrito, vaciarCarrito } = useContext(CartContext);
   const [total, setTotal] = useState(0);
   const [carritoAbierto, setCarritoAbierto] = useState(false);
+  const [compraFinalizada, setCompraFinalizada] = useState(false);
 
   useEffect(() => {
     calcularTotal();
@@ -34,6 +36,11 @@ const Carrito = () => {
 
   const cantidadProductos = carrito.reduce((total, producto) => total + producto.cantidad, 0);
 
+  const handleFinalizarCompra = () => {
+    setCompraFinalizada(true);
+    handleVaciarCarrito(); 
+  };
+
   return (
     <div className={`carrito ${carritoAbierto ? 'carrito-abierto' : ''}`}>
       <button className="carrito-toggle-btn" onClick={handleToggleCarrito}>
@@ -48,25 +55,30 @@ const Carrito = () => {
           ) : (
             <div>
               <ul className="carrito-productos">
-                {carrito.map((producto) =>
-                  producto.cantidad > 0 ? (
-                    <li key={producto.id}>
-                      <div className="carrito-producto">
-                        <img className="carrito-producto-imagen" src={producto.imagen} alt={producto.nombre} />
-                        <div className="carrito-producto-info">
-                          <p className="carrito-producto-nombre">{producto.nombre}</p>
-                          <p className="carrito-producto-cantidad">Cantidad: {producto.cantidad}</p>
+                {carrito.map(
+                  (producto) =>
+                    producto.cantidad > 0 && (
+                      <li key={producto.id}>
+                        <div className="carrito-producto">
+                          <img className="carrito-producto-imagen" src={producto.imagen} alt={producto.nombre} />
+                          <div className="carrito-producto-info">
+                            <p className="carrito-producto-nombre">{producto.nombre}</p>
+                            <p className="carrito-producto-cantidad">Cantidad: {producto.cantidad}</p>
+                          </div>
+                          <button onClick={() => handleEliminar(producto.id)}>Eliminar</button>
                         </div>
-                        <button onClick={() => handleEliminar(producto.id)}>Eliminar</button>
-                      </div>
-                    </li>
-                  ) : null
+                      </li>
+                    )
                 )}
               </ul>
               <p className="total">Total: ${total}</p>
               <button className="vaciar-btn" onClick={handleVaciarCarrito}>
                 Vaciar Carrito
               </button>
+              <button className="finalizar-compra-btn" onClick={handleFinalizarCompra}>
+                Finalizar Compra
+              </button>
+             
             </div>
           )}
         </div>
