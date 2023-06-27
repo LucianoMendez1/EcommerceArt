@@ -18,7 +18,7 @@ const Navegacion = () => {
       </div>
       <ul className={`navbar-items ${menuActivo ? 'active' : ''}`}>
         <li className="navbar-item">
-          <a href="" className="navbar-link">
+          <a href="home" className="navbar-link">
             Inicio
           </a>
         </li>
@@ -28,7 +28,7 @@ const Navegacion = () => {
           </a>
         </li>
         <li className="navbar-item">
-          <a href="#" className="navbar-link">
+          <a href="conctacto" className="navbar-link">
             Contacto
           </a>
         </li>

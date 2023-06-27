@@ -3,10 +3,9 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
+import { SMAAPass } from 'three/examples/jsm/postprocessing/SMAAPass';
+import { SSAOPass } from 'three/examples/jsm/postprocessing/SSAOPass';
 
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
-import { CopyShader } from 'three/examples/jsm/shaders/CopyShader';
 
 import textureImg from './textures/texture1.jpg';
 
@@ -51,7 +50,7 @@ const Scene = () => {
     // Renderer
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
-      antialias: true, // Habilitar antialiasing para obtener un renderizado suavizado
+      antialias: true,
     });
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(window.devicePixelRatio * 2);
@@ -63,13 +62,18 @@ const Scene = () => {
     const renderPass = new RenderPass(scene, camera);
     composer.addPass(renderPass);
 
-    // Bloom Pass para el efecto difuminado
-    const bloomPass = new UnrealBloomPass(new THREE.Vector2(sizes.width, sizes.height), 1.5, 0.4, 0.85);
-    composer.addPass(bloomPass);
+    // SMAA Pass
+    const smaaPass = new SMAAPass(sizes.width, sizes.height);
+    composer.addPass(smaaPass);
 
-    const copyPass = new ShaderPass(CopyShader);
-    copyPass.renderToScreen = true;
-    composer.addPass(copyPass);
+    // SSAO Pass
+    const ssaoPass = new SSAOPass(scene, camera, sizes.width, sizes.height);
+    ssaoPass.kernelRadius = 16;
+    ssaoPass.minDistance = 0.005;
+    ssaoPass.maxDistance = 0.1;
+    composer.addPass(ssaoPass);
+
+  
 
     // Object
     const textureLoader = new THREE.TextureLoader();
@@ -79,7 +83,7 @@ const Scene = () => {
       map: planetTexture,
       side: THREE.BackSide,
     });
-    materialRef.current = material; // Almacenar la referencia al material
+    materialRef.current = material;
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
@@ -89,7 +93,7 @@ const Scene = () => {
     controls.enableZoom = false;
     controls.enablePan = true;
     controls.minDistance = 50;
-    controls.maxDistance = 62;
+    controls.maxDistance = 60;
     controls.update();
 
     // Lights

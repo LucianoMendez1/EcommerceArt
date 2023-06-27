@@ -1,0 +1,38 @@
+.contacto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1ee3;
+    color: rgb(252, 252, 252);
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+  }
+  
+  .contacto-container h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: pink;
+  }
+  
+  .contacto-container p {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .contacto-container a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .contacto-container a:hover {
+    text-decoration: underline;
+  }
+  

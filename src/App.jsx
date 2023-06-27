@@ -6,6 +6,7 @@ import { CartProvider } from './components/carrito/CartContext';
 import Navegacion from './components/navegacion/Navegacion';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './components/home/Home';
+import Conctacto from './components/contacto/Contacto';
 import ProductoDetalle from './components/producto/ProductoDetalle';
 
 const App = () => {
@@ -14,9 +15,11 @@ const App = () => {
       <Navegacion />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/productos" element={<Producto />} />
-          <Route path="/producto/:id" element={<ProductoDetalle />} /> {/* Ruta para el detalle del producto */}
+          <Route path="/producto/:id" element={<ProductoDetalle />} />
+          <Route path='/conctacto' element ={<Conctacto/>}/>
           <Route path="/carrito" element={<Carrito />} />
         </Routes>
       </BrowserRouter>

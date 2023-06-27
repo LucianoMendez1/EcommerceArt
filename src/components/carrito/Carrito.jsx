@@ -51,7 +51,7 @@ const Carrito = () => {
         <div className="carrito-contenido">
           <h2>Mi Carrito</h2>
           {carrito.length === 0 ? (
-            <p>No hay productos en el carrito</p>
+            <p>No hay productos en el carrito :(</p>
           ) : (
             <div>
               <ul className="carrito-productos">

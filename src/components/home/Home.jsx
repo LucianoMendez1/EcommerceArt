@@ -42,7 +42,14 @@ const Home = () => {
         btnProductosRef.current,
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
-        '-=0.9' 
+        '-=0.9'
+      );
+
+      timeline.fromTo(
+        btnProductosRef.current,
+        { scale: 1 },
+        { scale: 1.1, repeat: -1, yoyo: true, duration: 1.5 },
+        '-=0.8'
       );
 
       return () => {
@@ -60,21 +67,21 @@ const Home = () => {
       <Scene />
       <div className="presentation">
         <h1 className="title" ref={titleRef}>
-          Palma Art
+          PalmArt
         </h1>
         {!showDescription && (
           <button className="mi" onClick={handleMiClick}>
-            Conoce Más Sobre Mí
+            Conoce Más Sobre Mí y mi tienda
           </button>
         )}
         {showDescription && (
           <div className="description-container show" ref={descriptionRef}>
             <span className="artist-description">
-              Valentina Palma artista de 21 años con un emprendimiento de venta.
+              Valentina Palma Ledesma, artista de 21 años con un emprendimiento de venta de arte.
             </span>
             <div className="description-buttons">
               <a href="/productos" className="btn-productos" ref={btnProductosRef}>
-                Tienda
+                Explora Nuestra Tienda
               </a>
               <button className="cerrar-button" onClick={handleCerrarClick}>
                 Cerrar
