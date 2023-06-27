@@ -12,7 +12,7 @@ const Contacto = () => {
         <h1 className="contacto-titulo">Contacto</h1>
         <p>
           Si deseas solicitar un cuadro a medida, por favor contáctanos a través
-          de Instagram:
+          de Insstagram:
         </p>
         <p>
           Instagram:{" "}
