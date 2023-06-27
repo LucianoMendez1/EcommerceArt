@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Scene2 from "../scene/Scene2";
-import "./Contacto.css";
+import "./contacto.css";
 import { FaInstagram } from "react-icons/fa";
 
 const Contacto = () => {
