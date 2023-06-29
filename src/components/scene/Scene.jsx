@@ -43,8 +43,10 @@ const Scene = () => {
     const scene = new THREE.Scene();
 
     // Camera
-    const camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 0.1, 1000);
-    camera.position.z = 100;
+    const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100);
+    camera.position.z = 11
+    camera.position.y = 1
+    camera.position.x = 1
     scene.add(camera);
 
     // Renderer

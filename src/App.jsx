@@ -9,6 +9,7 @@ import Home from './components/home/Home';
 import Conctacto from './components/contacto/Contacto';
 import ProductoDetalle from './components/producto/ProductoDetalle';
 
+
 const App = () => {
   return (
     <CartProvider>
@@ -19,6 +20,10 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/productos" element={<Producto />} />
           <Route path="/producto/:id" element={<ProductoDetalle />} />
+          <Route path="/producto/home" element={<Home />} />
+          <Route path="/producto/producto" element={<Producto />} />
+          <Route path="/producto/conctacto" element={<Conctacto />} />
+          <Route path="/producto/productos" element={<Producto />} />
           <Route path='/conctacto' element ={<Conctacto/>}/>
           <Route path="/carrito" element={<Carrito />} />
         </Routes>

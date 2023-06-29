@@ -9,9 +9,9 @@ import { CopyShader } from 'three/examples/jsm/shaders/CopyShader';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass';
 
-import textureImg from './textures/texture2.jpg';
+import textureImg from './textures/texture3.jpg';
 
-const Scene2 = () => {
+const Scene3 = () => {
   const canvasRef = useRef(null);
   const materialRef = useRef(null);
 
@@ -47,9 +47,8 @@ const Scene2 = () => {
     // Camera
     const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100);
     camera.position.z = 11
-    camera.position.y = 1
-    camera.position.x = 1
-    scene.add(camera);
+        camera.position.y = 1
+        camera.position.x = 1
     scene.add(camera);
 
     // Renderer
@@ -123,6 +122,7 @@ const Scene2 = () => {
 
       // Call animate again on the next frame
       requestAnimationFrame(animate);
+      /* window.requestAnimationFrame(animate) */
     };
 
     animate();
@@ -131,4 +131,4 @@ const Scene2 = () => {
   return <canvas className="webgl" ref={canvasRef}></canvas>;
 };
 
-export default Scene2;
+export default Scene3;

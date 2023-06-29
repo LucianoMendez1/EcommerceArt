@@ -1,25 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Scene2 from "../scene/Scene2";
-import "./contacto.css";
+import Scene3 from "../scene/Scene3";
 import { FaInstagram } from "react-icons/fa";
+import "./contacto.css";
+import "../navegacion/navegacion.css";
 
 const Contacto = () => {
   return (
     <div>
-      <Scene2 />
+      <Scene3 />
       <div className="contacto-container">
+        
         <h1 className="contacto-titulo">Contacto</h1>
         <p>
           Si deseas solicitar un cuadro a medida, por favor contáctanos a través
-          de Insstagram:
+          de Instagram:
         </p>
         <p>
-          Instagram:{" "}
-          <a href="https://www.instagram.com/lapalmito.art/">
+          <a href="https://www.instagram.com/lapalmito.art/" target="_blank" rel="noopener noreferrer">
             <FaInstagram /> @lapalmito.art
           </a>
         </p>
+        <div className="fin">Gracias</div>
       </div>
     </div>
   );

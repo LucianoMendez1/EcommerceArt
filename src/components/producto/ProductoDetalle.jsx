@@ -14,7 +14,7 @@ const ProductoDetalle = () => {
 
   const producto = stockProductos.find((producto) => producto.id === parseInt(id));
   if (!producto) {
-    return <div>Error: Producto no encontrado</div>;
+    
   }
 
   const handleAgregarAlCarrito = () => {
