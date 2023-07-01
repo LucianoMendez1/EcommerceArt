@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
 .contacto-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #181818e3;
+  background-color: #0f0f0ff1;
   color: rgb(252, 252, 252);
   z-index: 0;
   background-size: cover;
@@ -28,8 +39,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  
-  padding: 10px;
   border-radius: 10px;
 }
 
@@ -41,13 +50,11 @@
 }
 
 .contacto-container a {
-  
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  background-color: #fd6b7a;
- 
-  padding: 8px 12px;
+  background-color: #fd6b7a; 
+  padding: 10px 12px;
   border-radius: 20px;
   transition: background-color 0.3s ease;
 }
@@ -55,4 +62,8 @@
 .contacto-container a:hover {
   background-color: #ff8e9b;
   text-decoration: underline;
+}
+
+.fin{
+  margin-top: 50px;
 }

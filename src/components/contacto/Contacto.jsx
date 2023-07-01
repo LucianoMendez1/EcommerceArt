@@ -18,10 +18,10 @@ const Contacto = () => {
         </p>
         <p>
           <a href="https://www.instagram.com/lapalmito.art/" target="_blank" rel="noopener noreferrer">
-            <FaInstagram /> @lapalmito.art
+            <FaInstagram />lapalmito.art
           </a>
         </p>
-        <div className="fin">Gracias</div>
+        <div className="fin">Gracias.</div>
       </div>
     </div>
   );
