@@ -17,6 +17,7 @@ const Scene3 = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    let animationFrameId;
 
     // Sizes
     const sizes = {
@@ -46,15 +47,15 @@ const Scene3 = () => {
 
     // Camera
     const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100);
-    camera.position.z = 11
-        camera.position.y = 1
-        camera.position.x = 1
+    camera.position.z = 11;
+    camera.position.y = 1;
+    camera.position.x = 1;
     scene.add(camera);
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
-      antialias: true, // Habilitar antialiasing para obtener un renderizado suavizado
+      antialias: true,
     });
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(window.devicePixelRatio * 2);
@@ -121,11 +122,20 @@ const Scene3 = () => {
       composer.render();
 
       // Call animate again on the next frame
-      requestAnimationFrame(animate);
-      /* window.requestAnimationFrame(animate) */
+      animationFrameId = requestAnimationFrame(animate);
     };
 
     animate();
+
+    // Cleanup function
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      scene.remove(mesh);
+      materialRef.current.dispose();
+      textureLoader.dispose();
+      renderer.dispose();
+      composer.dispose();
+    };
   }, []);
 
   return <canvas className="webgl" ref={canvasRef}></canvas>;

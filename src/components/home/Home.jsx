@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './home.css';
 import Scene from '../scene/Scene';
 import { gsap } from 'gsap';
-import Preload from '../preload/Preload'
+/* import Preload from '../preload/Preload' */
 
 const Home = () => {
   const [showDescription, setShowDescription] = useState(false);
@@ -65,7 +65,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <Preload/>
+      
       <Scene />
       <div className="presentation">
         <h1 className="title" ref={titleRef}>
