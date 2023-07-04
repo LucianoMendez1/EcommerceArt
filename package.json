@@ -32,7 +32,8 @@
     "react-three-fiber": "^6.0.13",
     "styled-components": "^5.3.10",
     "sweetalert2": "^11.7.12",
-    "three": "^0.152.2"
+    "three": "^0.152.2",
+    "vanilla-lazyload": "^17.8.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
