@@ -7,7 +7,7 @@ import "../navegacion/navegacion.css";
 
 const Contacto = () => {
   return (
-    <div>
+    <div className="contacto-page">
       <Scene3 />
       <div className="contacto-container">
         

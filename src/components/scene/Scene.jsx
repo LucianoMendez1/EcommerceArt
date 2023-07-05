@@ -104,7 +104,7 @@ const Scene = () => {
 
     // Animation
     const animate = () => {
-      mesh.rotation.y += 0.005;
+      mesh.rotation.y += 0.001;
 
       // Render scene with postprocessing
       composer.render();

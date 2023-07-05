@@ -19,7 +19,7 @@
   z-index: 0;
   background-size: cover;
   background-position: center;
-  width: 50%;
+  width: 100%;
   height: 100vh;
   position: absolute;
   left:0%;
@@ -66,4 +66,9 @@
 
 .fin{
   margin-top: 50px;
+}
+
+.navegacion-container {
+  background-color: #000000;
+  /* Otros estilos de la navegación */
 }
