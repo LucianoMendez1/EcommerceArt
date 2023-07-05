@@ -2,7 +2,24 @@ import React, { useEffect, useRef, useState } from 'react';
 import './home.css';
 import Scene from '../scene/Scene';
 import { gsap } from 'gsap';
-/* import Preload from '../preload/Preload' */
+
+const TypewriterEffect = ({ text, speed }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (currentIndex < text.length) {
+        setDisplayText((prevText) => prevText + text[currentIndex]);
+        setCurrentIndex((prevIndex) => prevIndex + 1);
+      }
+    }, speed);
+
+    return () => clearTimeout(timer);
+  }, [currentIndex, text, speed]);
+
+  return <span>{displayText}</span>;
+};
 
 const Home = () => {
   const [showDescription, setShowDescription] = useState(false);
@@ -65,25 +82,27 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      
       <Scene />
       <div className="presentation">
         <h1 className="title" ref={titleRef}>
-          PalmArt
+          <TypewriterEffect text="PalmArt" speed={200} />
         </h1>
         {!showDescription && (
           <button className="mi" onClick={handleMiClick}>
-            Conoce Más Sobre Mí y mi tienda
+             <TypewriterEffect text=" Conoce Más Sobre Mí y mi tienda " speed={110}/>
           </button>
         )}
         {showDescription && (
           <div className="description-container show" ref={descriptionRef}>
             <span className="artist-description">
-              Valentina Palma Ledesma, artista de 21 años con un emprendimiento de venta de arte.
+              <TypewriterEffect
+                text="Valentina Palma Ledesma, artista de 21 años con un emprendimiento de venta de arte."
+                speed={50}
+              />
             </span>
             <div className="description-buttons">
               <a href="/productos" className="btn-productos" ref={btnProductosRef}>
-                Explora Nuestra Tienda
+              <TypewriterEffect text= "Visita mi Tienda" speed={100}/>
               </a>
               <button className="cerrar-button" onClick={handleCerrarClick}>
                 Cerrar

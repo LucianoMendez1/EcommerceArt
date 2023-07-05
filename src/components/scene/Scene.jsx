@@ -5,6 +5,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import { SMAAPass } from 'three/examples/jsm/postprocessing/SMAAPass';
 import { SSAOPass } from 'three/examples/jsm/postprocessing/SSAOPass';
+import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
 
 
 import textureImg from './textures/texture1.jpg';
@@ -75,7 +76,9 @@ const Scene = () => {
     ssaoPass.maxDistance = 0.1;
     composer.addPass(ssaoPass);
 
-  
+   
+    const filmPass = new FilmPass(0, 0.025, 648, false);
+    composer.addPass(filmPass); 
 
     // Object
     const textureLoader = new THREE.TextureLoader();
@@ -99,7 +102,7 @@ const Scene = () => {
     controls.update();
 
     // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.50);
     scene.add(ambientLight);
 
     // Animation

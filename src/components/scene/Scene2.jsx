@@ -9,7 +9,7 @@ import { CopyShader } from 'three/examples/jsm/shaders/CopyShader';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass';
 
-import textureImg from './textures/texture2.jpg';
+import textureImg from './textures/texture1.jpg';
 
 const Scene2 = () => {
   const canvasRef = useRef(null);
@@ -71,9 +71,9 @@ const Scene2 = () => {
     const bloomPass = new UnrealBloomPass(new THREE.Vector2(sizes.width, sizes.height), 1.5, 0.4, 0.85);
     composer.addPass(bloomPass);
 
-    /* // Film Pass para el efecto de borrosidad (desenfoque)
-    const filmPass = new FilmPass(0.35, 0.025, 648, false);
-    composer.addPass(filmPass); */
+    
+    const filmPass = new FilmPass(0.5 , 0.025, 648, true);
+    composer.addPass(filmPass); 
 
     // Bokeh Pass para el efecto de desenfoque gaussiano (más difuminado)
     const bokehPass = new BokehPass(scene, camera, {
@@ -111,7 +111,7 @@ const Scene2 = () => {
     controls.update();
 
     // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.090);
     scene.add(ambientLight);
 
     // Animation

@@ -9,7 +9,7 @@ import { CopyShader } from 'three/examples/jsm/shaders/CopyShader';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass';
 
-import textureImg from './textures/texture3.jpg';
+import textureImg from './textures/texture1.jpg';
 
 const Scene3 = () => {
   const canvasRef = useRef(null);
