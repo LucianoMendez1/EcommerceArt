@@ -130,6 +130,18 @@ a {
 }
 
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200vw; /* Ajusta la altura según tus necesidades */
+  color:#ffffff;
+  text-shadow: 5px 3px 4px rgba(0, 0, 0, 0.5);
+  transform: perspective(900px) rotateX(30deg);
+  background-color: #060404;
+  color: #fafafa;
+}
+
 
 .button-producto:hover {
   background-color: #28ba7f;

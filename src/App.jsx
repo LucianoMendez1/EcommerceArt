@@ -4,6 +4,14 @@ import { CartProvider } from './components/carrito/CartContext';
 import Navegacion from './components/navegacion/Navegacion';
 import './App.css';
 
+
+import Home from './components/home/Home';
+import Producto from './components/producto/Producto';
+import ProductoDetalle from './components/producto/ProductoDetalle';
+import Conctacto from './components/contacto/Contacto';
+import Carrito from './components/carrito/Carrito';
+
+
 const LazyHome = lazy(() => import('./components/home/Home'));
 const LazyProducto = lazy(() => import('./components/producto/Producto'));
 const LazyProductoDetalle = lazy(() => import('./components/producto/ProductoDetalle'));
@@ -15,18 +23,18 @@ const App = () => {
     <BrowserRouter>
       <CartProvider>
         <Navegacion />
-        <Suspense className="loading" fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-          <Route path="/" element={<LazyHome />} />
-            <Route path="/home" element={<LazyHome />} />
-            <Route path="/productos" element={<LazyProducto />} />
-            <Route path="/producto/:id" element={<LazyProductoDetalle />} />
-            <Route path="/producto/home" element={<LazyHome />} />
-            <Route path="/producto/producto" element={<LazyProducto />} />
-            <Route path="/producto/contacto" element={<LazyConctacto />} />
-            <Route path="/producto/productos" element={<LazyProducto />} />
-            <Route path="/contacto" element={<LazyConctacto />} />
-            <Route path="/carrito" element={<LazyCarrito />} />
+          <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/productos" element={<Producto />} />
+            <Route path="/producto/:id" element={<ProductoDetalle />} />
+            <Route path="/producto/home" element={<Home />} />
+            <Route path="/producto/producto" element={<Producto />} />
+            <Route path="/producto/contacto" element={<Conctacto />} />
+            <Route path="/producto/productos" element={<Producto />} />
+            <Route path="/contacto" element={<Conctacto />} />
+            <Route path="/carrito" element={<Carrito />} />
           </Routes>
         </Suspense>
       </CartProvider>

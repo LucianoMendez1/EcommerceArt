@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
+import './productoDetalle.css';
 import { useParams } from 'react-router-dom';
 import { stockProductos } from './stockProductos';
-import './productoDetalle.css';
+
 import { CartContext } from '../carrito/CartContext';
 import Scene2 from '../scene/Scene2';
 import Snackbar from '@mui/material/Snackbar';
