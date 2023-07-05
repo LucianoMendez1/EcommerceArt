@@ -4,14 +4,6 @@ import { CartProvider } from './components/carrito/CartContext';
 import Navegacion from './components/navegacion/Navegacion';
 import './App.css';
 
-
-import Home from './components/home/Home';
-import Producto from './components/producto/Producto';
-import ProductoDetalle from './components/producto/ProductoDetalle';
-import Conctacto from './components/contacto/Contacto';
-import Carrito from './components/carrito/Carrito';
-
-
 const LazyHome = lazy(() => import('./components/home/Home'));
 const LazyProducto = lazy(() => import('./components/producto/Producto'));
 const LazyProductoDetalle = lazy(() => import('./components/producto/ProductoDetalle'));
@@ -23,7 +15,7 @@ const App = () => {
     <BrowserRouter>
       <CartProvider>
         <Navegacion />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense className="loading" fallback={<div>Loading...</div>}>
           <Routes>
           <Route path="/" element={<LazyHome />} />
             <Route path="/home" element={<LazyHome />} />
