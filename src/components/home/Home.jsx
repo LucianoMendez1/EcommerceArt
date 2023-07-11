@@ -1,36 +1,32 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import './home.css';
-import Scene from '../scene/Scene';
 import { gsap } from 'gsap';
 
-const TypewriterEffect = ({ text, speed }) => {
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (currentIndex < text.length) {
-        setDisplayText((prevText) => prevText + text[currentIndex]);
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      }
-    }, speed);
-
-    return () => clearTimeout(timer);
-  }, [currentIndex, text, speed]);
-
-  return <span>{displayText}</span>;
-};
+const Scene = lazy(() => import('../scene/Scene'));
 
 const Home = () => {
   const [showDescription, setShowDescription] = useState(false);
-
-  const handleMiClick = () => {
-    setShowDescription(true);
-  };
-
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const btnProductosRef = useRef(null);
+
+  const TypewriterEffect = ({ text, speed }) => {
+    const [displayText, setDisplayText] = useState('');
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        if (currentIndex < text.length) {
+          setDisplayText((prevText) => prevText + text[currentIndex]);
+          setCurrentIndex((prevIndex) => prevIndex + 1);
+        }
+      }, speed);
+
+      return () => clearTimeout(timer);
+    }, [currentIndex, text, speed]);
+
+    return <span>{displayText}</span>;
+  };
 
   useEffect(() => {
     const timeline = gsap.timeline();
@@ -76,20 +72,26 @@ const Home = () => {
     }
   }, [showDescription]);
 
+  const handleMiClick = () => {
+    setShowDescription(true);
+  };
+
   const handleCerrarClick = () => {
     setShowDescription(false);
   };
 
   return (
     <div className="home-container">
-      <Scene />
+      <Suspense fallback={<div>Loading Scene...</div>}>
+        <Scene />
+      </Suspense>
       <div className="presentation">
         <h1 className="title" ref={titleRef}>
-          <TypewriterEffect text="PalmArt" speed={200} />
+          <TypewriterEffect text="PalmArt" speed={140} />
         </h1>
         {!showDescription && (
           <button className="mi" onClick={handleMiClick}>
-             <TypewriterEffect text=" Conoce Más Sobre Mí y mi tienda " speed={110}/>
+            <TypewriterEffect text=" Conoce Más Sobre Mí y mi tienda " speed={50} />
           </button>
         )}
         {showDescription && (
@@ -102,7 +104,7 @@ const Home = () => {
             </span>
             <div className="description-buttons">
               <a href="/productos" className="btn-productos" ref={btnProductosRef}>
-              <TypewriterEffect text= "Visita mi Tienda" speed={100}/>
+                <TypewriterEffect text="Visita mi Tienda" speed={100} />
               </a>
               <button className="cerrar-button" onClick={handleCerrarClick}>
                 Cerrar

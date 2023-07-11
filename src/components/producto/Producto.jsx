@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { stockProductos } from './stockProductos';
 import Card from './Card';
-import Scene2 from '../scene/Scene2';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 
+const Scene2 = lazy(() => import('../scene/Scene2'));
+
 const Producto = () => {
   const handleAgregarAlCarrito = (producto) => {
+    // Lógica para agregar el producto al carrito
   };
 
   return (
     <div className="app-container">
-      <Scene2 />
+      <Suspense fallback={<div>Loading Scene...</div>}>
+        <Scene2 />
+      </Suspense>
       <div className="logo">Palma Art</div>
       <div className="productos-container">
         {stockProductos.map((producto) => (
@@ -21,7 +25,6 @@ const Producto = () => {
       </div>
       {/* <Link to="/carrito">Ir al carrito</Link>
  */}
-      
     </div>
   );
 };
