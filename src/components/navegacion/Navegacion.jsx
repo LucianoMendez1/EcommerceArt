@@ -28,7 +28,7 @@ const Navegacion = () => {
           </a>
         </li>
         <li className="navbar-item">
-          <a href="conctacto" className="navbar-link">
+          <a href="Contacto" className="navbar-link">
             Contacto
           </a>
         </li>

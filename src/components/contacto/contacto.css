@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   background-color: #0f0f0ff1;
-  color: rgb(252, 252, 252);
+  color: rgb(255, 169, 255);
   z-index: 0;
   background-size: cover;
   background-position: center;
@@ -28,13 +28,15 @@
   align-items: center;
   font-style: oblique;
   padding: 20px;
+  
 }
 
 .contacto-container h1 {
   font-size: 5rem;
   font-weight: bold;
+  padding: 40px;
   margin-bottom: 20px;
-  color: #ffd6d6;
+  color: #ffd6fe;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,10 +44,13 @@
   border-radius: 10px;
 }
 
+
 .contacto-container p {
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: 800;
+  height: 50%;
   margin-bottom: 10px;
-  color: #fdfdfd;
+  color: #fbe0b2;
   margin-top: 2rem;
 }
 
@@ -53,14 +58,14 @@
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  background-color: #fd6b7a; 
+  background-color: #8d6bfd; 
   padding: 10px 12px;
   border-radius: 20px;
   transition: background-color 0.3s ease;
 }
 
 .contacto-container a:hover {
-  background-color: #ff8e9b;
+  background-color: #c18eff;
   text-decoration: underline;
 }
 

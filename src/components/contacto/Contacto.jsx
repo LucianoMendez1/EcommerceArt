@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import Scene3 from "../scene/Scene3";
+import Scene2 from "../scene/Scene2";
 import { FaInstagram } from "react-icons/fa";
 import "./contacto.css";
 import "../navegacion/navegacion.css";
@@ -10,13 +10,13 @@ const Contacto = () => {
 
   return (
     <div className="contacto-page">
-      <Scene3/>
+      <Scene2/>
       <div className="contacto-container">
         
         <h1 className="contacto-titulo">Contacto</h1>
         <p>
           Si deseas solicitar un cuadro a medida, por favor contáctanos a través
-          de Instagram:
+          de Instagram
         </p>
         <p>
           <a href="https://www.instagram.com/lapalmito.art/" target="_blank" rel="noopener noreferrer">
