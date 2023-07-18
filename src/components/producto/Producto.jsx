@@ -17,7 +17,7 @@ const Producto = () => {
       <Suspense fallback={<div>Loading Scene...</div>}>
         <Scene2 />
       </Suspense>
-      <div className="logo">PalmArt</div>
+      <div className="logo"></div>
       <div className="productos-container">
         {stockProductos.map((producto) => (
           <Card key={producto.id} producto={producto} agregarAlCarrito={() => handleAgregarAlCarrito(producto)} />
