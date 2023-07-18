@@ -18,6 +18,19 @@
   
 }
 
+.text_title {
+  /* ... otros estilos ... */
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  padding: 10px;
+  
+  border-radius: 10px;
+ 
+}
+
+
 .logo {
   display: inline-block;
   font-size: 3rem;

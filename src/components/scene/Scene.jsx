@@ -263,7 +263,7 @@ const Scene = () => {
       <canvas className="webgl opacity-100 !rounded-[70px] " ref={canvas_scene}></canvas>
 
       <div ref={textTitle} className="absolute top-[36.6rem] cursor-none select-none flex justify-center items-center flex-col ">
-        <h1 className="text_title text-[17vw] text-[#77777730] font-extrabold tracking-[-.4rem]"> Cambiar fondo </h1>
+        <h1 className="text_title text-[17vw] text-[#ffffff] font-extrabold tracking-[-.4rem]"> Cambiar fondo </h1>
       </div>
       <div id="circle_mouse">
         <CircularProgressbar
