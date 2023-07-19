@@ -1,22 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import Scene2 from "../scene/Scene2";
+import { gsap, CSSPlugin } from "gsap";
 import { FaInstagram } from "react-icons/fa";
 import "./contacto.css";
 import "../navegacion/navegacion.css";
+import Scene2 from "../scene/Scene2";
 
 const Contacto = () => {
   const { id } = useParams();
 
+  // Evitar conflictos con CSSPlugin al importar gsap
+  const C = CSSPlugin;
+
+  useEffect(() => {
+    // Animación de entrada de la página
+    gsap.from(".contacto-titulo, p, .fin", { opacity: 0, y: 30, stagger: 0.2, duration: 1 });
+
+    // Animación de salida de la página al desmontar el componente
+    return () => {
+      gsap.to(".contacto-titulo, p, .fin", { opacity: 0, y: -30, stagger: 0.2, duration: 1 });
+    };
+  }, []);
+
+  useEffect(() => {
+    // Animación de titileo de luz en el título
+    const tl = gsap.timeline({ repeat: -1, yoyo: true });
+
+    tl.to(".contacto-titulo", {
+      color: "#10fabc", // Color brillante 1
+      duration: 0.5,
+    }).to(".contacto-titulo", {
+      color: "#548c8e", // Color brillante 2
+      duration: 0.5,
+    });
+  }, []);
+
   return (
     <div className="contacto-page">
-      <Scene2/>
+      <Scene2 />
       <div className="contacto-container">
-        
         <h1 className="contacto-titulo">Contacto</h1>
         <p>
-          Si deseas solicitar un cuadro a medida, por favor contáctanos a través
-          de Instagram
+          Si deseas solicitar un cuadro a medida, por favor contáctanos a través de Instagram
         </p>
         <p>
           <a href="https://www.instagram.com/lapalmito.art/" target="_blank" rel="noopener noreferrer">
