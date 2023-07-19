@@ -9,21 +9,21 @@ import Scene2 from "../scene/Scene2";
 const Contacto = () => {
   const { id } = useParams();
 
-  // Evitar conflictos con CSSPlugin al importar gsap
+
   const C = CSSPlugin;
 
   useEffect(() => {
-    // Animación de entrada de la página
+   
     gsap.from(".contacto-titulo, p, .fin", { opacity: 0, y: 30, stagger: 0.2, duration: 1 });
 
-    // Animación de salida de la página al desmontar el componente
+   
     return () => {
       gsap.to(".contacto-titulo, p, .fin", { opacity: 0, y: -30, stagger: 0.2, duration: 1 });
     };
   }, []);
 
   useEffect(() => {
-    // Animación de titileo de luz en el título
+  
     const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
     tl.to(".contacto-titulo", {
