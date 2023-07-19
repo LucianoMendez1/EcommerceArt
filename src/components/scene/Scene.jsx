@@ -276,23 +276,7 @@ const Scene = () => {
         />
       </div>
 
-      {/* icons top */}
-      <div className="rec flex justify-center items-center gap-2">
-        <div className="mr-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 41 41" fill="none">
-            <path d="M27.17 27.17C26.1 34.5 23.4 39.71 20.23 39.71C16.13 39.71 12.8 30.99 12.8 20.23C12.8 9.47 16.13 0.75 20.23 0.75C24.33 0.75 27.66 9.47 27.66 20.23C27.66 20.88 27.65 21.51 27.62 22.14" stroke="white" strokeWidth="2" />
-            <path d="M31.39 18.84L27.65 22.57L23.92 18.84" stroke="white" strokeWidth="2" />
-            <path d="M13.29 27.17C5.96 26.1 0.75 23.4 0.75 20.23C0.75 16.13 9.47 12.8 20.23 12.8C30.99 12.8 39.71 16.12 39.71 20.23C39.71 24.34 30.99 27.66 20.23 27.66C19.58 27.66 18.95 27.65 18.32 27.62" stroke="white" strokeWidth="2" />
-            <path d="M21.62 31.39L17.89 27.65L21.62 23.92" stroke="white" strokeWidth="2" />
-          </svg>
-        </div>
-        <span className="font-mono">
-          <span></span> REC{' '}
-        </span>
-        <div className="box_battery flex justify-center items-center ">
-          <div className="battery"></div>
-        </div>
-      </div>
+     
     </div>
   );
 };

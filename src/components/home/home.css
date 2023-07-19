@@ -33,9 +33,11 @@
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 20px;
+
   color: #fffefe;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transform: perspective(500px) rotateX(30deg);
+  
 }
 
 .description-container {
