@@ -91,6 +91,7 @@
     font-weight: bold;
     margin-top: 10px;
     transition: all 0.3s ease;
+    color: #08c014;
   }
 
   .vaciar-btn {
@@ -373,7 +374,9 @@
   .total {
     font-weight: bold;
     margin-top: 10px;
+    
     transition: all 0.3s ease;
+   color:#207b01; 
   }
 
   .vaciar-btn {
@@ -381,8 +384,8 @@
     color: #fff;
     border: none;
     border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 14px;
+   
+    font-size: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
   }
@@ -419,7 +422,7 @@
   }
 
   .carrito button {
-    background-color: #2e2d2d28;
+    background-color: #00339228;
     color: #ffffff;
     font-size: 1.2rem;
     border: none;

@@ -107,8 +107,11 @@ a {
 }
 
 .producto p {
-  margin-top: 20px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  
+  line-height: 1.5;
   color: #02521d;
 }
 
@@ -132,7 +135,7 @@ a {
 }
 
 .button-producto {
-  background-color: #fd6b7a;
+  background-color: #548c8e;
   color: #fff;
   border: none;
   border-radius: 4px;

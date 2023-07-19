@@ -29,8 +29,6 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 900px;
-
-
   text-align: center;
 }
 
@@ -41,11 +39,8 @@ body {
   color: #548c8e;
   text-transform: uppercase;
   font-family: 'Permanent Marker', cursive;
-  
- 
   text-shadow: 0 0 20px rgba(84, 140, 142, 0.8);
 }
-
 
 .contacto-container p {
   font-size: 3rem;
@@ -81,4 +76,28 @@ body {
 
 .navegacion-container {
   background-color: #000000;
+}
+
+/* Media Queries for Responsive Layout */
+
+/* For devices with a width less than 768px (e.g., smartphones) */
+@media only screen and (max-width: 767px) {
+  .contacto-titulo {
+    font-size: 4rem;
+  }
+
+  .contacto-container p {
+    font-size: 2rem;
+  }
+}
+
+/* For devices with a width between 768px and 1023px (e.g., tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .contacto-titulo {
+    font-size: 5rem;
+  }
+
+  .contacto-container p {
+    font-size: 2.5rem;
+  }
 }

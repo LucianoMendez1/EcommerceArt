@@ -71,7 +71,7 @@ const Carrito = () => {
                     )
                 )}
               </ul>
-              <p className="total">Total: ${total}</p>
+              <p className="total">${total}</p>
               <button className="vaciar-btn" onClick={handleVaciarCarrito}>
                 Vaciar Carrito
               </button>
