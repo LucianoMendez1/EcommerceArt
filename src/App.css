@@ -226,4 +226,8 @@ a {
   .producto-descripcion {
     font-size: 0.8rem;
   }
+
+  .carrito{
+    width: 100%;
+  }
 }
