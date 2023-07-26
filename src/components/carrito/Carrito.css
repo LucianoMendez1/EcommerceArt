@@ -168,9 +168,10 @@
     position: fixed;
     display: flex;
     align-items: center;
-    top: 0.1px;
+    top: 1.1px;
     left: 0;
-    width: 90%;
+    
+    width: 15%;
     padding: 10px;
     z-index: 9999;
   }
